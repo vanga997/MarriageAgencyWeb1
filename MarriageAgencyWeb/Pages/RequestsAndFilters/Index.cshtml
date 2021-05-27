@@ -1,0 +1,89 @@
+@page
+@model MarriageAgencyWeb.Pages.RequestsAndFilters.IndexModel
+@{
+
+    <div class="accordion" id="accordionExample">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="text-decoration: none">
+                        Запросы
+                    </button>
+                </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    <a class="nav-link text-dark" asp-area="" asp-page="/RequestsAndFilters/Request/PersonnelDepartment">Отдел кадров</a>
+                    <a class="nav-link text-dark" asp-area="" asp-page="/RequestsAndFilters/Request/ListOfClients">Список клиентов</a>
+                </div>
+            </div>
+        </div>
+<div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="text-decoration: none">
+                        Фильтры
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                    <form>
+                        Отобразить сотрудников с должностью:
+                        <select asp-items="Model.Position" name="id" class="form-control-sm">
+                            <option value="-1">Должность не выбрана</option>
+                        </select>
+                        <button asp-page="filter/WorkerFilter" class="btn btn-primary">Отфильтровать</button>
+                    </form>
+                    <br />
+
+                    <form>
+                        Отобразить клиентов со знаками зодиака:
+                        <select asp-items="Model.ZodiacSign" name="id" class="form-control-sm">
+                            <option value="-1">Знак зодиака не выбран</option>
+                        </select>
+                        <button asp-page="filter/ClientFilter1" class="btn btn-primary">Отфильтровать</button>
+                    </form>
+                    <br />
+
+                    <form>
+                        Отобразить клиентов с отношениями:
+                        <select asp-items="Model.Relation" name="id" class="form-control-sm">
+                            <option value="-1">Отношения не выбраны</option>
+                        </select>
+                        <button asp-page="filter/ClientFilter2" class="btn btn-primary">Отфильтровать</button>
+                    </form>
+                    <br />
+
+                    <form>
+                        Отобразить клиентов с национальностью:
+                        <select asp-items="Model.Nationality" name="id" class="form-control-sm">
+                            <option value="-1">Национальность не выбрана</option>
+                        </select>
+                        <button asp-page="filter/ClientFilter3" class="btn btn-primary">Отфильтровать</button>
+                    </form>
+                    <br />
+
+                    <form>
+                        Отобразить клиентов с хобби:
+                        <select asp-items="Model.Hobby" name="Hobby" class="form-control-sm">
+                            <option value="-1">Хобби не выбрано</option>
+                        </select>
+                        <button asp-page="filter/ClientFilter4" class="btn btn-primary">Отфильтровать</button>
+                    </form>
+                    <br />
+
+                    <form>
+                        Отобразить клиентов с семейным положением:
+                        <select asp-items="Model.FamilyStatus" name="FamilyStatus" class="form-control-sm">
+                            <option value="-1">Семейное положение не выбрано</option>
+                        </select>
+                        <button asp-page="filter/ClientFilter5" class="btn btn-primary">Отфильтровать</button>
+                    </form>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+}

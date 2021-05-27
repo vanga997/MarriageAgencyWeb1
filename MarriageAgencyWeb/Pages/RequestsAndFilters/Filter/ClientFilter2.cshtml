@@ -1,0 +1,32 @@
+@page
+@model MarriageAgencyWeb.Pages.RequestsAndFilters.Filter.ClientFilter2Model
+@{
+    <h1>Список клиентов</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Client[0].FullName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Client[0].RelationId)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Client)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FullName)
+                    </td>
+                    <td>
+                        @Model.Relation.RelationName
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
